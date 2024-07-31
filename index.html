@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anjaan Games</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="top">
+            <nav>
+                <label class="logo">Anjaan Games</label>
+            </nav>
+        </div>
+    
+        <div id="main">
+            <div class="outer">
+                <div class="mid">
+                    <div class="pic"> <img src="/res/shooter.png" alt="">
+                    </div>
+                    <div class="name">Target Zero</div>
+                    <div class="data">
+                        <p class="short-description"> Welcome to Target Zero, an intense and action-packed shooter where you are the last line of
+                            defence! in this thrilling game, you play as a brave warrior standing at the center of a hostile
+                            arena. Waves of relentless enemies converge from all directions, and you mission is to shoot
+                            them down before the reach you.</p>
+                        <p class="full-description description">
+                            Welcome to Target Zero, an intense and action-packed shooter where you are the last line of
+                            defence! in this thrilling game, you play as a brave warrior standing at the center of a hostile
+                            arena. Waves of relentless enemies converge from all directions, and you mission is to shoot
+                            them down before the reach you.
+                            <br><br>survive as long as you can while facing increasingly challenging foes. Precision, speed,
+                            and strategy are you best allies in this battle for survival. As the Enemies close in, can you
+                            maintain you ground and achieve the highest score?
+                            <br><br>dive into the freay, defend you position, and prove your skills in "Target Zero"!
+                        </p>
+                        <p class="toggle-button">Show more >></p>
+                    </div>
+                    <div class="start"><a href="/games/shooter/index.html">Start</a></div>
+                </div>
+            </div>
+        </div>
+    
+        <div id="foot">
+            <p>this website is made by anjaan</p>
+            <p>you can follow him</p>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.toggle-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const gameDiv = this.closest('.data');
+                const fullDescription = gameDiv.querySelector('.full-description')
+                const shortDescription = gameDiv.querySelector('.short-description');
+                const midDiv = this.closest('.mid')
+                const outerDiv = midDiv.closest('.outer');
+
+                if (fullDescription.style.display === 'none' || fullDescription.style.display === ''){
+                    fullDescription.style.display = 'block';
+                    shortDescription.style.display = 'none';
+                    this.innerText = 'Show less';
+                    gameDiv.style.height = 'auto';
+                    outerDiv.style.height = '500px';
+                    midDiv.style.height = '480px'
+                } else {
+                    fullDescription.style.display = 'none';
+                    shortDescription.style.display = 'block';
+                    gameDiv.style.height = 'auto'
+                    outerDiv.style.height = '370px'
+                    this.innerText = 'Show more';
+                }
+            })
+        })
+        document.querySelectorAll('full-description').forEach(description => {
+            description.style.display = 'none';
+        })
+    </script>
+</body>
+
+</html>
